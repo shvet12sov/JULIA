@@ -1,11 +1,11 @@
 
 import React, { useState, useRef } from 'react';
-import { Navbar } from './widgets/navbar/ui/Navbar';
-import { Button } from './shared/ui/Button';
-import { Glow } from './shared/ui/Glow';
-import { ReviewCard } from './entities/review/ui/ReviewCard';
-import { scrollToSection } from './shared/lib/scroll';
-import { PROFILE_DATA, TRUST_FACTS, CAREER_TRACK, PROBLEM_INSIGHTS, SERVICES, REVIEWS } from './data';
+import { Navbar } from './widgets/navbar/ui/Navbar.tsx';
+import { Button } from './shared/ui/Button.tsx';
+import { Glow } from './shared/ui/Glow.tsx';
+import { ReviewCard } from './entities/review/ui/ReviewCard.tsx';
+import { scrollToSection } from './shared/lib/scroll.ts';
+import { PROFILE_DATA, TRUST_FACTS, CAREER_TRACK, PROBLEM_INSIGHTS, SERVICES, REVIEWS } from './data.ts';
 
 const App = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -51,7 +51,7 @@ const App = () => {
         </div>
       )}
 
-      {/* Hero Section - Added pb-20 for mobile bottom spacing */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-28 md:pt-24 pb-20 md:pb-0 overflow-hidden">
         <Glow className="top-[-100px] right-[-100px]" />
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
