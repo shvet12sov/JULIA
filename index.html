@@ -22,10 +22,14 @@
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- React and Babel for TSX support in browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #4f46e5;
@@ -78,7 +82,8 @@
             border-radius: 10px;
         }
     </style>
-<script type="importmap">
+
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
@@ -91,7 +96,11 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- Load index.tsx as a module relative to the base path -->
-    <script type="module" src="index.tsx"></script>
+    
+    <!-- 
+      We use data-type="module" to tell Babel to treat imports correctly, 
+      and data-presets="react,typescript" to handle TSX 
+    -->
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="index.tsx"></script>
 </body>
 </html>
