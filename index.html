@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Юлия Телегина | Психолог для предпринимателей</title>
     
-    <!-- Базовый путь для GitHub Pages -->
-    <base href="/JULIA/">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Подключаем Babel для компиляции TSX на лету -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,6 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 
-    <!-- Поддержка модулей для React 19 через ESM.sh -->
     <script type="importmap">
 {
   "imports": {
@@ -70,21 +69,8 @@
 <body>
     <div id="root"></div>
     
-    <!-- Скрипт-заглушка для обработки путей при перезагрузке страницы на GH Pages -->
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&') 
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-
-    <script type="module" src="./index.tsx"></script>
+    <!-- Важно: указываем type="text/babel" и data-type="module" для работы импортов -->
+    <script type="text/babel" data-type="module" src="index.tsx"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
