@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { scrollToSection } from '../../../shared/lib/scroll';
-import { Button } from '../../../shared/ui/Button';
+import { scrollToSection } from '../../../shared/lib/scroll.ts';
+import { Button } from '../../../shared/ui/Button.tsx';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
