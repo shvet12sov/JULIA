@@ -5,8 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Юлия Телегина | Психолог для предпринимателей</title>
+    
+    <!-- Base path for GitHub Pages subfolder -->
+    <base href="/JULIA/">
+    
+    <!-- SEO & Social Sharing -->
+    <meta name="description" content="Психолог и психоаналитический коуч для лидеров и предпринимателей. Масштаб бизнеса начинается с масштаба личности.">
+    <meta property="og:title" content="Юлия Телегина | Психолог для предпринимателей">
+    <meta property="og:description" content="Помогаю предпринимателям проходить кризисы, опираясь на твердый бизнес-опыт и академические знания.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -55,13 +67,6 @@
             background: var(--primary);
             transform: scale(1.02);
         }
-        .soft-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, rgba(249, 248, 246, 0) 70%);
-            z-index: -1;
-        }
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -76,14 +81,17 @@
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
 </head>
 <body>
     <div id="root"></div>
+    <!-- Load index.tsx as a module relative to the base path -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
